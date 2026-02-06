@@ -28,12 +28,13 @@ public class PolygonCalculator {
                     double side1 = readSide(scanner, "Triangle side1");
                     double side2 = readSide(scanner, "Triangle side2");
                     double side3 = readSide(scanner, "Triangle side3");
-                    if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1){
+                    if (((side1 + side2) <= side3) || ((side1 + side3) <= side2) || ((side2 + side3) <= side1)){
                         System.out.println("Invalid Triangle!");
                         break;
+                    } else {
+                        polygon = new Triangle(side1, side2, side3);
+                        break;
                     }
-                    polygon = new Triangle(side1, side2, side3);
-                    break;
                 }
                 case "4": {
                     double equalSide = readSide(scanner, "Isosceles Triangle's equal side");
@@ -41,9 +42,10 @@ public class PolygonCalculator {
                     if (2 * equalSide <= base) {
                         System.out.println("Invalid Isosceles Triangle!");
                         break;
+                    } else {
+                        polygon = new IsoscelesTriangle(equalSide, base);
+                        break;
                     }
-                    polygon = new IsoscelesTriangle(equalSide, base);
-                    break;
                 }
                 case "5": {
                     double side = readSide(scanner,"Equilateral Triangle side");
