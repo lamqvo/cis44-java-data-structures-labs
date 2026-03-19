@@ -24,27 +24,38 @@ Copy the code below into your Java IDE. You will need to complete both the Print
 /**
  * Represents a single document to be printed.
  */
+
+
 class PrintJob {
+
     private String documentName;
+    
     private int pageCount;
 
     // TODO: Implement the constructor
+    
     public PrintJob(String documentName, int pageCount) {
+    
         // Your code here
+        
     }
 
     // TODO: Implement the toString method to return a descriptive string
     // e.g., "PrintJob[Document: report.docx, Pages: 15]"
+    
     @Override
     public String toString() {
         return ""; // Placeholder
     }
+    
 }
 
 /**
  * Simulates a printer that manages a queue of print jobs.
  */
+
 public class Printer {
+
     private Queue jobQueue;
 
     public Printer() {
@@ -56,8 +67,11 @@ public class Printer {
      * Adds a new print job to the rear of the queue.
      * @param job The print job to add.
      */
+     
     public void addJob(PrintJob job) {
+    
         System.out.println("Adding to queue: " + job);
+        
         // TODO: Enqueue the job
     }
 
