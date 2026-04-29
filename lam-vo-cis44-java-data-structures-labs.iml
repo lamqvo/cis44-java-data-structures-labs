@@ -6,6 +6,26 @@
       <sourceFolder url="file://$MODULE_DIR$/lab1-calculator" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lab1-dot-product" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lab2-polygon" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab3-2d-array-matrix" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab3-dynamic-array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab4-singly-linked-list" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab2-Ecosystem" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab4-doubly-linked-list" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab5-dynamic-array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab5-positional-list" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab6-code-syntax" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab6-print-job" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab7-maze-solver" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab7-Fractal-Tree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab8-max-subarray-sum" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab8-sorting-race" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab9-company_tree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab10-RecursiveBinarySearch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab10-SearchAlgorithms" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab9-arithmetic_tree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab11-avl_tree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab11-twofour_tree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lab12-simple_sorts" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

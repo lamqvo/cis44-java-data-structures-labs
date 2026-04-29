@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Main {
+public class DynamicArrayDriver {
     public static void main(String[] args){
         DynamicArray<Integer> da = new DynamicArray<>();
         System.out.println("Initial Array size: " + da.size());
