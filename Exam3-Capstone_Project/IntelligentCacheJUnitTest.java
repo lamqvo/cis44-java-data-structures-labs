@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class IntelligentCacheJUnitTest {
 
     @Test()
-    @DisplayName("Test Empty Cache")
+    @DisplayName("Boundary Test - Empty Cache")
     public void testEmptyCache() {
         IntelligentCache<Integer, String> cache = new IntelligentCache<>(3);
         assertEquals(0, cache.size());  // verify size = 0
@@ -17,7 +17,7 @@ public class IntelligentCacheJUnitTest {
     }
 
     @Test()
-    @DisplayName("Test Normal Insert")
+    @DisplayName("Normal Test - Insert And Retrieve Items")
     public void testNormalInsert() {
         IntelligentCache<Integer, String> cache = new IntelligentCache<>(3);
         cache.put(1, "Google");                             // Step 1. insert (1, "Google")
@@ -31,7 +31,7 @@ public class IntelligentCacheJUnitTest {
     }
 
     @Test()
-    @DisplayName("Test Removal Of Least Recent Used cache")
+    @DisplayName("Edge Case Test - Remove Least Recently Used Item")
     public void testLeastRecentlyUsedRemoval() {
         IntelligentCache<Integer, String> cache = new IntelligentCache<>(3);
         cache.put(1, "Google");                                 // Step 1. insert (1, "Google")
@@ -47,7 +47,7 @@ public class IntelligentCacheJUnitTest {
     }
 
     @Test()
-    @DisplayName("Test Update Existing Key")
+    @DisplayName("Edge Case Test - Update Existing Key")
     public void testUpdateExistingKey() {
         IntelligentCache<Integer, String> cache = new IntelligentCache<>(3);
         cache.put(1, "Google");                                 // Step 1. insert (1, "Google")
