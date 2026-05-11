@@ -57,4 +57,16 @@ public class IntelligentCacheJUnitTest {
         assertEquals("Google Updated", cache.get(1));   // Verify search for key = 1 returns value "Google Updated"
         assertEquals(1, cache.getMostRecentKey());      // Verify most recent used key = 1
     }
+
+    @Test
+    @DisplayName("Edge Case Test - Remove Existing Key")
+    public void testRemoveKey() {
+        IntelligentCache<Integer, String> cache = new IntelligentCache<>(3);
+        cache.put(1, "Google");                             // Step 1. insert (1, "Google")
+        cache.put(2, "Yahoo");                              // Step 2. insert (2, "Yahoo")
+        String removedValue = cache.remove(1);         // Step 3. remove key = 1 -> should return value of key=1 which is "Google"
+        assertEquals("Google", removedValue);      // Verify "Google" is the return value after remove key=1
+        assertEquals(1, cache.size());             // Verify cache size reduced by 1 which is 2-1=1
+        assertNull(cache.get(1));                           // Verify key=1 no longer exist
+    }
 }

@@ -3,8 +3,7 @@ public class Main {
         System.out.println("=== Phase 4 Intelligent Cache Testing ===");
 
         System.out.println("\n-- Empty/Boundary Tests --");
-        IntelligentCache<Integer, String> cache =
-                new IntelligentCache<>(3);
+        IntelligentCache<Integer, String> cache = new IntelligentCache<>(3);
         // Boundary Test: empty cache
         printTest(
                 "Verify empty cache size is 0",
@@ -16,44 +15,38 @@ public class Main {
                 cache.get(1) == null
         );
 
-
         System.out.println("\n-- Normal Logic Tests --");
-
         // Logic Test: add items
         cache.put(1, "Google");
         cache.put(2, "Yahoo");
         cache.put(3, "Bing");
-
         printTest(
                 "Verify cache size after 3 inserts is 3",
                 cache.size() == 3
         );
-
         printTest(
                 "Verify most recent key is 3",
                 cache.getMostRecentKey().equals(3)
         );
-
         printTest(
                 "Least recent key is 1",
                 cache.getLeastRecentKey().equals(1)
         );
+
         // Logic Test: get key
         String value = cache.get(1);
-
         printTest(
                 "Verify key 1 returns Google",
                 value.equals("Google")
         );
-
         printTest(
                 "Verify after searching key 1, key 1 moves to front -> most recent",
                 cache.getMostRecentKey().equals(1)
         );
 
-
+        // Edge Cases
         System.out.println("\n-- Edge Case Tests --");
-        // Edge Case: inserting new key to a fulled list
+        // Edge Case: inserting new key to a fulled cache
         cache.put(4, "Apple");
         printTest(
                 "Verify after inserting key 4, cache size is still 3",
@@ -68,16 +61,57 @@ public class Main {
 
         // Edge Case: update existing key
         cache.put(3, "Bing Updated");
-
         printTest(
                 "Verify updating key 3 changes its value",
                 cache.get(3).equals("Bing Updated")
         );
-
         printTest(
                 "Verify updated key 3 becomes most recent",
                 cache.getMostRecentKey().equals(3)
         );
+
+        // Edge Case: remove existing key
+        String removedValue = cache.remove(1);
+
+        printTest(
+                "Verify remove key 1 returns Google",
+                removedValue.equals("Google")
+        );
+
+        printTest(
+                "Verify removed key 1 no longer exists",
+                cache.get(1) == null
+        );
+
+        printTest(
+                "Verify cache size after removing key 1 is 2",
+                cache.size() == 2
+        );
+
+        // Edge Case: remove existing key, then remove again
+        String removedExisting = cache.remove(1);
+        printTest(
+                "Verify remove key 1 returns Google",
+                removedValue.equals("Google")
+        );
+        printTest(
+                "Verify removed key 1 again which not exists returns Null",
+                cache.get(1) == null
+        );
+        printTest(
+                "Verify cache size after removing key 1 is 2",
+                cache.size() == 2
+        );
+
+        // Edge Case: remove missing key
+        String missingRemove = cache.remove(99);
+        printTest(
+                "Verify removing missing key 99 returns null",
+                missingRemove == null
+        );
+
+
+
 
         System.out.println("\nFinal cache:");
         cache.displayCache();
