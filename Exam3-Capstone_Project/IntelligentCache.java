@@ -19,7 +19,7 @@ class IntelligentCache<K, V> {
         this.tail = null;
     }
 
-    // Returns the value for a key.
+    // Returns the value of a key.
     // If the key exists, move that node to the front because it was recently used.
     public V get(K key) {
         if (!map.containsKey(key)) {            // if key not found
@@ -49,6 +49,18 @@ class IntelligentCache<K, V> {
         }
         addToFront(newNode);        // move the node to front after adding new key
         map.put(key, newNode);
+    }
+
+    // Remove a key from cache list
+    public V remove(K key){
+        if (!map.containsKey(key)){
+            return null;
+        }
+
+        CacheNode<K, V> node = map.get(key);
+        removeNode(node);       // disconnect node
+        map.remove(key);        // remove key
+        return node.value;
     }
 
     // Moves an existing node to the front of the list.
@@ -114,5 +126,19 @@ class IntelligentCache<K, V> {
 
     public boolean isEmpty() {
         return map.isEmpty();
+    }
+
+    public K getMostRecentKey() {
+        if (head == null) {
+            return null;
+        }
+        return head.key;
+    }
+
+    public K getLeastRecentKey() {
+        if (tail == null) {
+            return null;
+        }
+        return tail.key;
     }
 }
