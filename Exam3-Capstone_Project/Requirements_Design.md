@@ -37,31 +37,39 @@ Double Linked List will have O(1) time complexity when insert, move to front,  o
 ```text
 +---------------------------+
 
-| LRUCache |
+| IntelligentCache |
 
 +---------------------------+
 
 | - capacity: int |
 
-| - map: HashMap<Integer, Node> |
+| - map: HashMap<Integer, CacheNode> |
 
-| - head: Node |
+| - head: CacheNode |
 
-| - tail: Node |
+| - tail: CacheNode |
 
 +---------------------------+
 
 | + get(key: int): int |
 
-| + put(key: int, value: int): void |
+| + put(key: int, value: String): void |
 
-| - moveToFront(node: Node): void |
+| + remove(key: int): String |
 
-| - removeNode(node: Node): void |
+| + size(): int |
 
-| - addToFront(node: Node): void |
+| + isEmpty(): boolean |
 
-| - removeLRU(): void |
+| + displayCache(): void |
+
+| - moveToFront(node: CacheNode): void |
+
+| - removeNode(node: CacheNode): void |
+
+| - addToFront(node: CacheNode): void |
+
+| - removeLeastRecentlyUsed(): void |
 
 +---------------------------+
 
@@ -70,17 +78,17 @@ Double Linked List will have O(1) time complexity when insert, move to front,  o
 
 +---------------------------+
 
-| Node |
+| CacheNode |
 
 +---------------------------+
 
 | - key: int |
 
-| - value: int |
+| - value: String |
 
-| - prev: Node |
+| - prev: CacheNode |
 
-| - next: Node |
+| - next: CacheNode |
 
 +---------------------------+
 ```
